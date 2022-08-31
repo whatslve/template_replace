@@ -51,7 +51,7 @@ class Api
 	 * @param		array $array
 	 * @return		array
 	 */
-	private function get_replace_holders(array $array)
+	private function get_replace_holders(array $array) : array
 	{
 	    return array_map(function ($array_item) 
             {
