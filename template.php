@@ -9,11 +9,6 @@
  */
 class Api
 {
-    public function __construct()
-    {
-	
-    }
-		
     const REPLACE_HOLDERS =
     [
     	
@@ -25,6 +20,13 @@ class Api
         
         '%salary%'
     ];
+
+	
+    public function __construct()
+    {
+	
+    }
+		
 
 	/**
 	 * Заполняет строковый шаблон template данными из объекта object
