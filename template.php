@@ -11,13 +11,9 @@ class Api
 {
     const REPLACE_HOLDERS =
     [
-    	
         '%id%', 
-        
         '%name%', 
-        
         '%role%', 
-        
         '%salary%'
     ];
 
