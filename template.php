@@ -38,7 +38,25 @@ class Api
 	public function get_api_path(array $array, string $template) : string
 	{
 		return str_replace(self::REPLACE_HOLDERS, $array, $template);
+		
+		/**
+		 * кейс если нужно динамически получить replace_holders
+		 * return str_replace($this->get_replace_holders($array), $array, $template);
+		 */
 
+	}
+	
+	/**
+	 * Получает replace_holders из ключей массива
+	 * @param		array $array
+	 * @return		array
+	 */
+	private function get_replace_holders(array $array)
+	{
+	    return array_map(function ($array_item) 
+            {
+               return '%'.$array_item.'%';
+            }, array_keys($array));
 	}
 }
 
