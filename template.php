@@ -9,10 +9,10 @@
  */
 class Api
 {
-	public function __construct()
-	{
+    public function __construct()
+    {
 	
-	}
+    }
 		
     const REPLACE_HOLDERS =
     [
