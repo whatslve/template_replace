@@ -39,7 +39,7 @@ class Api
 		
 		/**
 		 * кейс если нужно динамически получить replace_holders
-		 * return str_replace($this->get_replace_holders($array), $array, $template);
+		 * return str_replace($this->get_replace_holders($array), $this->parameters_encode($array), $template);
 		 */
 
 	}
