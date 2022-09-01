@@ -35,13 +35,20 @@ class Api
 	 */
 	public function get_api_path(array $array, string $template) : string
 	{
-		return str_replace(self::REPLACE_HOLDERS, $array, $template);
+		return str_replace(self::REPLACE_HOLDERS, $this->parameters_encode($array), $template);
 		
 		/**
 		 * кейс если нужно динамически получить replace_holders
 		 * return str_replace($this->get_replace_holders($array), $array, $template);
 		 */
 
+	}
+	
+	private function parameters_encode(array $parameters) : array
+	{
+	    return array_map(function ($paramater) {
+	        return rawurlencode($paramater);
+	    }, $parameters);
 	}
 	
 	/**
@@ -81,7 +88,7 @@ $api_paths = array_map(function ($api_path_template) use ($api, $user)
 }, $api_path_templates);
 
 echo json_encode($api_paths, JSON_FORCE_OBJECT | JSON_UNESCAPED_UNICODE);
-
+var_dump($api_paths);
 
 $expected_result = ['/api/items/20/John%20Dow','/api/items/20/QA','/api/items/20/100'];
 
