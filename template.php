@@ -44,6 +44,12 @@ class Api
 
 	}
 	
+	/**
+	 * Возвращает массив с закодированными параметрами
+	 * @param		array $array
+	 * @return		array
+	 */
+	
 	private function parameters_encode(array $parameters) : array
 	{
 	    return array_map(function ($paramater) {
